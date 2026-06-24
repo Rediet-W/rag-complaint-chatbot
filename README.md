@@ -48,3 +48,12 @@ pip install pandas langchain langchain-huggingface langchain-chroma
 2. **Environment Setup:** Ensure your `HF_TOKEN` is set in your environment if you are accessing Hugging Face Hub (though model files are cached locally after the first run).
 3. **Run Pipeline:** Execute the notebooks/scripts in order: `Task_1_Cleaning.ipynb` followed by `Task_2_Indexing.ipynb`.
 
+## Task 3: Building the RAG Core Logic and EvaluationObjective: Develop a robust retrieval and generation pipeline and perform qualitative evaluation of its effectiveness.
+Accomplishments
+* Retriever Implementation: Developed a ComplaintRetriever class that utilizes all-MiniLM-L6-v2 to map user queries into semantic space, performing similarity searches to retrieve the top-k (k=5) most relevant context chunks.
+* Generator Implementation: Built a ComplaintGenerator using google/flan-t5-base. Implemented a custom prompt template that enforces strict adherence to retrieved context, guiding the model to act as a professional financial analyst.
+* System Orchestration: Developed app.py to bridge the retriever and generator, ensuring seamless context injection and response formulation.
+
+## Task 4: Interactive InterfaceObjective: Deploy a user-friendly frontend to interact with the RAG pipeline.
+Accomplishments
+UI/UX: Built an interactive web application using Streamlit.Transparency: Implemented a "View Retrieved Sources" feature that displays the specific complaint IDs and text chunks used by the LLM to generate each answer, ensuring full traceability and trust.
